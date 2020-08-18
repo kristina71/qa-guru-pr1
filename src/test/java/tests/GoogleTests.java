@@ -14,9 +14,9 @@ public class GoogleTests {
         open("https://google.com");
 
         // Ввести Selenide в поиск
-        $(byName("q")).setValue("Selenide").pressEnter();
+        $(".gLFyf").setValue("Selenide").pressEnter();
 
         // Проверить, что Selenide появился в результатах поиска
-        $("html").shouldHave(text("ru.selenide.org"));
+        $(".iUh30").shouldHave(text("ru.selenide.org"));
     }
 }
