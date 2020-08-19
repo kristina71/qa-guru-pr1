@@ -10,26 +10,24 @@ import static com.codeborne.selenide.Selenide.open;
 public class GoogleTests {
     @Test
     void selenideSearchTest() {
-        // Открыть google
-        open("https://google.com");
+        open("https://google.com");// Открыть google
 
-        // Ввести Selenide в поиск
-        $(byName("q")).setValue("Selenide").pressEnter();
 
-        // Проверить, что Selenide появился в результатах поиска
-        $("html").shouldHave(text("ru.selenide.org"));
+        $(byName("q")).setValue("Selenide").pressEnter();// Ввести Selenide в поиск
+
+
+        $("html").shouldHave(text("ru.selenide.org"));// Проверить, что Selenide появился в результатах поиска
     }
     
      @Test
     void selenideSearchYandexTest() {
-        // Открыть google
-        open("https://google.com");
+        open("https://yandex.ru/");// Открыть Yandex
 
-        // Ввести Selenide в поиск
-        $(byName("q")).setValue("Selenide").pressEnter();
 
-        // Проверить, что Selenide появился в результатах поиска
-        $("html").shouldHave(text("ru.selenide.org"));
+        $(".input__control").setValue("Selenide").pressEnter();// Ввести Selenide в поиск
+
+
+        $("html").shouldHave(text("ru.selenide.org"));// Проверить, что Selenide появился в результатах поиска
     }
     
 }
