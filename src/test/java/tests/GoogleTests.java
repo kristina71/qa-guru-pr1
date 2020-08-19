@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class GoogleTests {
+public class BrowserSearchTests {
     @Test
     void selenideSearchTest() {
         open("https://google.com");// Открыть google
@@ -27,7 +27,7 @@ public class GoogleTests {
         $(".input__control").setValue("Selenide").pressEnter();// Ввести Selenide в поиск
 
 
-        $("html").shouldHave(text("ru.selenide.org"));// Проверить, что Selenide появился в результатах поиска
+        $(".link_theme_outer").shouldHave(text("ru.selenide.org"));// Проверить, что Selenide появился в результатах поиска
     }
     
 }
