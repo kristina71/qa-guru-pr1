@@ -7,16 +7,27 @@ import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class GoogleTests {
+public class BrowserSearchTests {
     @Test
     void selenideSearchTest() {
-        // Открыть google
-        open("https://google.com");
+        open("https://google.com");// Открыть google
 
-        // Ввести Selenide в поиск
-        $(byName("q")).setValue("Selenide").pressEnter();
 
-        // Проверить, что Selenide появился в результатах поиска
-        $("html").shouldHave(text("ru.selenide.org"));
+        $(byName("q")).setValue("Selenide").pressEnter();// Ввести Selenide в поиск
+
+
+        $("html").shouldHave(text("ru.selenide.org"));// Проверить, что Selenide появился в результатах поиска
     }
+    
+     @Test
+    void selenideSearchYandexTest() {
+        open("https://yandex.ru/");// Открыть Yandex
+
+
+        $(".input__control").setValue("Selenide").pressEnter();// Ввести Selenide в поиск
+
+
+        $(".link_theme_outer").shouldHave(text("ru.selenide.org"));// Проверить, что Selenide появился в результатах поиска
+    }
+    
 }
